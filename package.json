@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,6 +27,9 @@
   ],
   "proxy": "http://localhost:2323/",
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10"
   }
 }
