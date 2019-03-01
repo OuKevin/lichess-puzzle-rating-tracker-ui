@@ -1,19 +1,21 @@
+const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config()
+
 const app = express();
 const port = process.env.PORT || 2323;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/hello', (req, res) => {
-  console.log('hello')
-  res.send({ express: 'Hello From Express' });
-});
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
+app.get('/ratings', async (req, res) => {
+  const { apiToken } = process.env;
+  const { data } = await axios.get(
+    'https://qpyko3na6l.execute-api.us-east-2.amazonaws.com/non-prod/fetchHistoricalPuzzleRatings',
+    { 'x-api-key': apiToken}
   );
+
+  res.send(data);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
