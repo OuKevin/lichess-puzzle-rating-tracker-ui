@@ -12,7 +12,7 @@ export default () => {
 
   const fetchData = async () => {
     // const { data } = await axios.get('/ratings')
-    setData(take(sortBy(testData, 'creation_date'), 10));
+    setData(take(sortBy(testData, 'creation_date'), 100));
   };
 
   useEffect(() => {
@@ -22,24 +22,29 @@ export default () => {
   return (
     <>
       <h1>Historical Lichess Puzzle Rating</h1>
-      <ResponsiveContainer height={1000} width={1000}>
       <LineChart
-        width={500}
-        height={300}
         data={data}
+        width={730}
+        height={250}
         scale={'auto'}
         margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis allowDataOverflow={true} dataKey="creation_date" />
-        <YAxis />
+        <XAxis
+          dataKey="creation_date"
+        />
+        <YAxis
+          domain={['dataMin - 100', 'dataMax + 100']}
+        />
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="rating" stroke="#8884d8" activeDot={{ r: 8 }} />
       </LineChart>
-      </ResponsiveContainer>
     </>
   )
 }
