@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
+import CustomTooltip from '../components/CustomTooltip';
 import axios from 'axios';
 import sortBy from 'lodash/sortBy';
 import take from 'lodash/take';
@@ -19,19 +20,6 @@ export default () => {
   useEffect(() => {
     fetchData()
   }, [])
-
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active) {
-      return (
-        <div className="custom-tooltip">
-          <p className="rating-label">{`Rating : ${payload[0].value}`}</p>
-          <p className="date-label">{`Date : ${label}`}</p>
-        </div>
-      );
-    }
-
-    return null;
-  };
 
   return (
     <>
