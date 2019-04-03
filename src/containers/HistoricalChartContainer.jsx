@@ -12,21 +12,34 @@ export default () => {
 
   const fetchData = async () => {
     // const { data } = await axios.get('/ratings')
-    setData(take(sortBy(testData, 'creation_date'), 100));
+    // setData(take(sortBy(testData, 'creation_date'), 100));
+    setData(sortBy(testData, 'creation_date'));
   };
 
   useEffect(() => {
     fetchData()
   }, [])
 
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active) {
+      return (
+        <div className="custom-tooltip">
+          <p className="rating-label">{`Rating : ${payload[0].value}`}</p>
+          <p className="date-label">{`Date : ${label}`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <>
-      <h1>Historical Lichess Puzzle Rating</h1>
+      <h1>Puzzle Rating for: Kevinou</h1>
       <LineChart
         data={data}
         width={730}
         height={250}
-        scale={'auto'}
         margin={{
           top: 5,
           right: 30,
@@ -37,13 +50,22 @@ export default () => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey="creation_date"
+          tick={false}
+          tickLine={false}
         />
         <YAxis
-          domain={['dataMin - 100', 'dataMax + 100']}
+          domain={['dataMin - 25', 'dataMax + 25']}
         />
-        <Tooltip />
+        <Tooltip
+          content={CustomTooltip}
+        />
         <Legend />
-        <Line type="monotone" dataKey="rating" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <Line
+          dot={false}
+          type="monotone"
+          dataKey="rating"
+          stroke="#8884d8"
+        />
       </LineChart>
     </>
   )
