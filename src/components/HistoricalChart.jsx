@@ -7,30 +7,13 @@ import getDomainWithOffset from '../utils/getDomainWithOffset';
 
 export default ({ data }) => (
   <ResponsiveContainer width="100%" height="80%">
-    <LineChart
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
+    <LineChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis
-        dataKey="creation_date"
-        tick={false}
-        tickLine={false}
-      />
+      <XAxis dataKey="creation_date" tick={false} />
       <YAxis domain={[getDomainWithOffset('lower'), getDomainWithOffset('upper')]} />
       <Tooltip content={CustomTooltip} />
       <Legend />
-      <Line
-        dot={false}
-        type="monotone"
-        dataKey="rating"
-        stroke="#8884d8"
-      />
+      <Line dataKey="rating" dot={false} stroke="#8884d8" type="step" />
     </LineChart>
   </ResponsiveContainer>
 );
