@@ -20,7 +20,7 @@ export default () => {
   return (
     <div className='chart-container'>
       <h1>Puzzle Rating for: Kevinou</h1>
-      <HistoricalChart data={data} />>
+      <HistoricalChart data={data} />
     </div>
   )
 }
