@@ -6,8 +6,8 @@ const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
       <div className="custom-tooltip">
-        <p className="rating-label">{`Rating : ${payload[0].value}`}</p>
-        <p className="date-label">{`Date : ${formatDate(label)}`}</p>
+        <p>{`Rating : ${payload[0].value}`}</p>
+        <p>{`Date : ${formatDate(label)}`}</p>
       </div>
     );
   }
