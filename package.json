@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
+    "lint": "eslint \"@(src|test)/**/*.js?(x)\"",
     "server": "nodemon server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",

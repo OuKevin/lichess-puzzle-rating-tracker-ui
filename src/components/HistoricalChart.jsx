@@ -3,6 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 import CustomTooltip from './CustomTooltip';
+import getDomainWithOffset from '../utils/getDomainWithOffset';
 
 export default ({ data }) => (
   <ResponsiveContainer width="100%" height="80%">
@@ -21,7 +22,7 @@ export default ({ data }) => (
         tick={false}
         tickLine={false}
       />
-      <YAxis domain={['dataMin - 25', 'dataMax + 25']} />
+      <YAxis domain={[getDomainWithOffset('lower'), getDomainWithOffset('upper')]} />
       <Tooltip content={CustomTooltip} />
       <Legend />
       <Line
