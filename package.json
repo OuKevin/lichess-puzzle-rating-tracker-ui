@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "lint": "eslint \"@(src|test)/**/*.js?(x)\"",
+    "lint": "eslint \"@(src|test)/**/*.{js,jsx}\"",
     "server": "nodemon server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -38,6 +39,12 @@
   ],
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
   },
   "proxy": "http://localhost:2323/"
 }
