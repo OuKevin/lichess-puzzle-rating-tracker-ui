@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTooltip renders active tooltips as expected 1`] = `
+<div
+  className="custom-tooltip"
+>
+  <p>
+    Rating : 100
+  </p>
+  <p>
+    Date : 03/30/2019
+  </p>
+</div>
+`;
+
+exports[`CustomTooltip renders inactive tooltips as expected 1`] = `""`;

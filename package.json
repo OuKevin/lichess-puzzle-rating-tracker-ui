@@ -2,25 +2,35 @@
   "name": "lichess-puzzle-rating-tracker-ui",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "^2.1.8"
-  },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "lint": "eslint \"@(src|test)/**/*.{js,jsx}\"",
     "server": "nodemon server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "date-fns": "^1.30.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.10",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "^2.1.8",
+    "recharts": "^1.5.0"
   },
   "browserslist": [
     ">0.2%",
@@ -28,12 +38,14 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:2323/",
-  "devDependencies": {
-    "date-fns": "^1.30.1",
-    "dotenv": "^6.2.0",
-    "lodash": "^4.17.11",
-    "nodemon": "^1.18.10",
-    "recharts": "^1.5.0"
-  }
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
+  },
+  "proxy": "http://localhost:2323/"
 }
