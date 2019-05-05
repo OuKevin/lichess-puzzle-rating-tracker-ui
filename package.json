@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -27,9 +30,6 @@
   ],
   "proxy": "http://localhost:2323/",
   "devDependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
     "date-fns": "^1.30.1",
     "dotenv": "^6.2.0",
     "lodash": "^4.17.11",
