@@ -1,6 +1,8 @@
 const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+
 if (process.env.NODE_ENV === 'development') { require('dotenv').config() };
 
 const app = express();
@@ -16,6 +18,12 @@ app.get('/ratings', async (req, res) => {
   );
 
   res.send(data);
+});
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
