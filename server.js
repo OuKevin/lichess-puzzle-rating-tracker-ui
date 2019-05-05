@@ -6,7 +6,7 @@ const path = require('path');
 if (process.env.NODE_ENV === 'development') { require('dotenv').config() };
 
 const app = express();
-const port = process.env.SERVER_PORT || 2323;
+const port = process.env.PORT || 2323;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
