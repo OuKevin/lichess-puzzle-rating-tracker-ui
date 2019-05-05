@@ -18,6 +18,4 @@ app.get('/ratings', async (req, res) => {
   res.send(data);
 });
 
-app.get('/hello', (req, res) => res.send('hello'))
-
 app.listen(port, () => console.log(`Listening on port ${port}`));
