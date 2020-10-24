@@ -2,8 +2,9 @@ import React from 'react';
 import HistoricalChartContainer from './containers/HistoricalChartContainer'
 import './App.css';
 
-export default () =>
+const App = () =>
   <div className="App">
     <HistoricalChartContainer />
   </div>
 
+export default App;

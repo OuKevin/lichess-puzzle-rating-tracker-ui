@@ -1,4 +1,4 @@
-export default [
+const testData = [
   {
     "rating": 1751,
     "creation_date": "2019-03-14T04:59:49.635Z"
@@ -800,3 +800,5 @@ export default [
     "creation_date": "2019-04-02T04:59:49.602Z"
   }
 ]
+
+export default testData

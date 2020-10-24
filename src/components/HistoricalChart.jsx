@@ -5,7 +5,7 @@ import {
 import CustomTooltip from './CustomTooltip';
 import getDomainWithOffset from '../utils/getDomainWithOffset';
 
-export default ({ data }) => (
+const HistoricalChart = ({ data }) => (
   <ResponsiveContainer width="100%" height="80%">
     <LineChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
@@ -17,3 +17,5 @@ export default ({ data }) => (
     </LineChart>
   </ResponsiveContainer>
 );
+
+export default HistoricalChart

@@ -4,8 +4,9 @@ import axios from 'axios';
 import sortBy from 'lodash/sortBy';
 // import testData from '../testData';
 import './historicalChartContainer.css'
+import LinearProgress from '@material-ui/core/LinearProgress'
 
-export default () => {
+export const HistoricalChartContainer = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -21,7 +22,12 @@ export default () => {
   return (
     <div className='chart-container'>
       <h1>Puzzle Rating for: Kevinou</h1>
-      <HistoricalChart data={data} />
+      {data.length > 0
+        ? <HistoricalChart data={data} />
+        : <LinearProgress />
+      }
     </div>
   )
 }
+
+export default HistoricalChartContainer
