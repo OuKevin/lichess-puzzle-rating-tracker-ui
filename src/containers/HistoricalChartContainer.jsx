@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HistoricalChart from '../components/HistoricalChart';
 import axios from 'axios';
-import sortBy from 'lodash/sortBy';
 import './historicalChartContainer.css'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import RatingStatistics from '../components/RatingStatistics'
@@ -11,7 +10,7 @@ export const HistoricalChartContainer = () => {
 
   const fetchData = async () => {
     const { data } = await axios.get('/ratings')
-    setData(sortBy(data, 'creation_date'));
+    setData(data);
   };
 
   useEffect(() => {
