@@ -12,12 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ratings', async (req, res) => {
   const { apiToken } = process.env;
-  const { data } = await axios.get(
-    'https://qpyko3na6l.execute-api.us-east-2.amazonaws.com/non-prod/fetchHistoricalPuzzleRatings',
-    { 'x-api-key': apiToken },
-  );
+  try {
+    const { data } = await axios.get(
+      'https://qpyko3na6l.execute-api.us-east-2.amazonaws.com/non-prod/fetchHistoricalPuzzleRatings',
+      { headers: { 'x-api-key': apiToken } },
+    );
 
-  res.send(data);
+    res.send(data)
+  } catch (error) {
+    console.log(error)
+  }
 });
 
 app.use(express.static(path.join(__dirname, 'build')));

@@ -3,7 +3,7 @@ import meanBy from 'lodash/meanBy'
 import minBy from 'lodash/minBy'
 import round from 'lodash/round'
 
-const RatingStatistics = ({data}) => console.log(data) || (
+const RatingStatistics = ({data}) => (
 <>
   <h5>{`Number of Days Recorded: ${data.length}`}</h5>
   <h5>{`Max Rating: ${maxBy(data, 'rating').rating}`}</h5>
