@@ -12,9 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ratings', async (req, res) => {
   const { apiToken } = process.env;
+  const { numberOfDaysDisplayed } = req.query
   try {
     const { data } = await axios.get(
-      'https://qpyko3na6l.execute-api.us-east-2.amazonaws.com/non-prod/fetchHistoricalPuzzleRatings',
+      `https://qpyko3na6l.execute-api.us-east-2.amazonaws.com/non-prod/fetchHistoricalPuzzleRatings?numberOfDaysDisplayed=${numberOfDaysDisplayed}`,
       { headers: { 'x-api-key': apiToken } },
     );
 

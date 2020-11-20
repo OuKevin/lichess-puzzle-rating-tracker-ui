@@ -1,6 +1,12 @@
 import React from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from 'recharts';
 import CustomTooltip from './CustomTooltip';
 import getDomainWithOffset from '../utils/getDomainWithOffset';

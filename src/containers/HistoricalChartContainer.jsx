@@ -9,7 +9,7 @@ export const HistoricalChartContainer = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const { data } = await axios.get('/ratings')
+    const { data } = await axios.get('/ratings?numberOfDaysDisplayed=30')
     setData(data);
   };
 
