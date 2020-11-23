@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoricalChartContainer from './containers/HistoricalChartContainer'
+import HistoricalChartContainer from './containers/HistoricalChartContainer';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 import './App.css';
@@ -9,7 +9,7 @@ const App = () =>
   <div className="App">
     <HistoricalChartContainer />
   </div>
-  </ThemeProvider>
+  </ThemeProvider>;
 
 
 export default App;

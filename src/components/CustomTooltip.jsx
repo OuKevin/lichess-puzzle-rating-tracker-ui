@@ -1,7 +1,7 @@
 import React from 'react';
 import formatDate from '../utils/formatDate';
 import get from 'lodash/get';
-import './CustomToooltip.css'
+import './CustomToooltip.css';
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active) {

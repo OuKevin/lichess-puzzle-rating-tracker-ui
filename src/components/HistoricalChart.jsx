@@ -23,4 +23,4 @@ const HistoricalChart = ({ data }) => (
   </ResponsiveContainer>
 );
 
-export default HistoricalChart
+export default HistoricalChart;

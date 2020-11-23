@@ -1,5 +1,5 @@
-const OFFSET = 25
+const OFFSET = 25;
 
-const getDomainWithOffset = (direction) => (domain) => direction === 'lower' ? domain - OFFSET : domain + OFFSET
+const getDomainWithOffset = (direction) => (domain) => direction === 'lower' ? domain - OFFSET : domain + OFFSET;
 
-export default getDomainWithOffset
+export default getDomainWithOffset;
