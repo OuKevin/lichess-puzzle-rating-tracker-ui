@@ -12,7 +12,7 @@ import CustomTooltip from './CustomTooltip';
 import getDomainWithOffset from '../utils/getDomainWithOffset';
 
 const HistoricalChart = ({ data }) => (
-  <ResponsiveContainer width="100%" height="80%">
+  <ResponsiveContainer width="100%" height="70%">
     <LineChart data={data}>
       <XAxis dataKey="creation_date" tick={false} />
       <YAxis domain={[getDomainWithOffset('lower'), getDomainWithOffset('upper')]} />
